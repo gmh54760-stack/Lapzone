@@ -1,1 +1,127 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>LapZone | لابتوبات وسماعات وصيانة</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;700&display=swap">
+<style>
+:root{--bg:#eef2f3;--surface:#fff;--ink:#0f2329;--muted:#51656b;--line:#d3dde0;--brand:#0b6e75;--brand-ink:#fff;--price:#b4530a;--tag:#dff0f1;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1a1e;--surface:#142a30;--ink:#e8f1f2;--muted:#9fb5ba;--line:#26424a;--brand:#4cc3c9;--brand-ink:#06242a;--price:#f0a35e;--tag:#1c3b43}}
+:root[data-theme="dark"]{--bg:#0d1a1e;--surface:#142a30;--ink:#e8f1f2;--muted:#9fb5ba;--line:#26424a;--brand:#4cc3c9;--brand-ink:#06242a;--price:#f0a35e;--tag:#1c3b43}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"IBM Plex Sans Arabic",Tahoma,Arial,sans-serif;line-height:1.7}
+.wrap{max-width:960px;margin:0 auto;padding:0 18px}
+header{display:flex;justify-content:space-between;align-items:center;padding:16px 0}
+.logo{font-weight:700;font-size:1.25rem}
+nav a{color:var(--muted);text-decoration:none;margin-inline-start:16px;font-size:.95rem}
+nav a:hover,nav a:focus-visible{color:var(--brand)}
+a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--brand);outline-offset:2px}
+.hero{padding:34px 0 26px}
+h1{font-size:clamp(1.9rem,6vw,3rem);line-height:1.3;margin:0 0 12px;font-weight:700;max-width:16em}
+.hero p{color:var(--muted);max-width:34em;margin:0 0 20px;font-size:1.05rem}
+.btn{display:inline-block;background:var(--brand);color:var(--brand-ink);border:0;padding:12px 22px;border-radius:10px;font:inherit;font-weight:700;text-decoration:none;cursor:pointer}
+.btn.alt{background:transparent;color:var(--ink);border:2px solid var(--line);margin-inline-start:8px}
+h2{font-size:1.5rem;margin:0 0 6px}
+section{padding:30px 0}
+.sub{color:var(--muted);margin:0 0 16px}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.chip{border:2px solid var(--line);background:var(--surface);color:var(--ink);padding:6px 16px;border-radius:99px;font:inherit;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--brand);color:var(--brand-ink);border-color:var(--brand)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:6px}
+.pic{height:96px;border-radius:10px;background:var(--tag);display:grid;place-items:center;font-size:2.6rem}
+.card h3{margin:6px 0 0;font-size:1.05rem}
+.spec{color:var(--muted);font-size:.9rem;margin:0}
+.price{color:var(--price);font-weight:700;font-size:1.15rem}
+.row{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:8px}
+.small{padding:8px 14px;font-size:.92rem;border-radius:8px}
+.services{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px;margin-bottom:22px}
+.svc{background:var(--surface);border-right:4px solid var(--brand);padding:12px 14px;border-radius:8px}
+.svc b{display:block}
+.svc span{color:var(--muted);font-size:.9rem}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;display:grid;gap:10px;max-width:520px}
+label{font-weight:500;font-size:.95rem}
+select,input,textarea{width:100%;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:inherit}
+footer{border-top:1px solid var(--line);padding:22px 0 30px;color:var(--muted);font-size:.92rem}
+.note{background:var(--tag);padding:10px 14px;border-radius:8px;font-size:.9rem;margin-bottom:16px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><div class="logo" id="shopName"></div><nav><a href="#products">المنتجات</a><a href="#repair">الصيانة</a><a href="#contact">تواصل</a></nav></header>
 
+<div class="hero">
+<h1>لابتوبات وسماعات وصيانة، كلها بمكان واحد</h1>
+<p>منتجات مضمونة بأسعار واضحة، وصيانة وتنصيب برامج على إيد فني. اطلب مباشرة عبر واتساب.</p>
+<a class="btn" href="#products">شوف المنتجات</a><a class="btn alt" href="#repair">اطلب صيانة</a>
+</div>
+
+<section id="products">
+<h2>المنتجات</h2>
+<p class="sub">اضغط على «اطلب» وبتوصلك رسالة جاهزة على واتساب.</p>
+<div class="filters" id="filters"></div>
+<div class="grid" id="grid"></div>
+</section>
+
+<section id="repair">
+<h2>الصيانة والتنصيب</h2>
+<p class="sub">فنّي برمجيات ولابتوبات. احكينا شو المشكلة وبنرد عليك.</p>
+<div class="services" id="services"></div>
+<div class="panel">
+<label for="svc">نوع الخدمة</label><select id="svc"></select>
+<label for="nm">اسمك</label><input id="nm" autocomplete="name">
+<label for="pb">وصف المشكلة</label><textarea id="pb" rows="3" placeholder="مثلًا: اللابتوب بطيء وبيسخّن"></textarea>
+<button class="btn" id="send" type="button">أرسل الطلب عبر واتساب</button>
+</div>
+</section>
+
+<footer id="contact">
+<div id="contactInfo"></div>
+</footer>
+</div>
+
+<script>
+var SHOP={name:"LapZone",phone:"963956749418",hours:"من 11 صباحًا لحد 8 مساءً (عطلة الجمعة)",place:"الميدان"};
+var PRODUCTS=[
+{c:"لابتوب",n:"لابتوب HP مستعمل",s:"معالج i7-10850H | رام 32GB | SSD 512GB | كرت شاشة T2000",p:"675$",i:"💻"}
+];
+var SERVICES=[
+["تنصيب ويندوز وبرامج","تنصيب نظام نظيف مع البرامج الأساسية"],
+["تسريع اللابتوب","تنظيف النظام وتحسين الأداء"],
+["تنظيف وتبديل المعجون الحراري","لسخونة الجهاز وصوت المراوح"],
+["ترقية رام أو SSD","رفع سرعة الجهاز بشكل واضح"],
+["إزالة الفيروسات","فحص وتنظيف كامل"],
+["تبديل بطارية أو شاشة","بعد فحص الجهاز وتأكيد السعر"]
+];
+function wa(t){return "https://wa.me/"+SHOP.phone+"?text="+encodeURIComponent(t)}
+document.getElementById("shopName").textContent=SHOP.name;
+document.title=SHOP.name+" | لابتوبات وسماعات وصيانة";
+var cats=["الكل"].concat(PRODUCTS.map(function(x){return x.c}).filter(function(v,i,a){return a.indexOf(v)===i}));
+var cur="الكل";
+function draw(){
+var f=document.getElementById("filters");f.innerHTML="";
+cats.forEach(function(c){var b=document.createElement("button");b.className="chip";b.type="button";b.textContent=c;b.setAttribute("aria-pressed",c===cur);b.onclick=function(){cur=c;draw()};f.appendChild(b)});
+var g=document.getElementById("grid");g.innerHTML="";
+PRODUCTS.filter(function(x){return cur==="الكل"||x.c===cur}).forEach(function(x){
+var d=document.createElement("div");d.className="card";
+d.innerHTML='<div class="pic"></div><h3></h3><p class="spec"></p><div class="row"><span class="price"></span><a class="btn small" target="_blank" rel="noopener">اطلب</a></div>';
+d.querySelector(".pic").textContent=x.i;d.querySelector("h3").textContent=x.n;d.querySelector(".spec").textContent=x.s;d.querySelector(".price").textContent=x.p;
+d.querySelector("a").href=wa("مرحبا، بدي أطلب: "+x.n+" ("+x.p+")");
+g.appendChild(d)})}
+draw();
+var sv=document.getElementById("services"),sel=document.getElementById("svc");
+SERVICES.forEach(function(s){var d=document.createElement("div");d.className="svc";d.innerHTML="<b></b><span></span>";d.querySelector("b").textContent=s[0];d.querySelector("span").textContent=s[1];sv.appendChild(d);var o=document.createElement("option");o.textContent=s[0];sel.appendChild(o)});
+document.getElementById("send").onclick=function(){
+var m="مرحبا، بدي طلب صيانة\nالخدمة: "+sel.value+"\nالاسم: "+document.getElementById("nm").value+"\nالمشكلة: "+document.getElementById("pb").value;
+window.open(wa(m),"_blank")};
+var ci=document.getElementById("contactInfo");
+ci.innerHTML='<p><b></b></p><p></p><p><a class="btn small" target="_blank" rel="noopener">راسلنا على واتساب</a></p>';
+ci.querySelector("b").textContent=SHOP.name;
+ci.children[1].textContent="الدوام: "+SHOP.hours+" | "+SHOP.place;
+ci.querySelector("a").href=wa("مرحبا، عندي استفسار");
+</script>
+</body>
+</html>
